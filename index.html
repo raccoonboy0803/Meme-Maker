@@ -8,9 +8,7 @@
     <title>Meme Maker</title>
   </head>
   <body>
-    <canvas></canvas>
-    <input type="range" id="lineWidth" min="1" max="10" value="5" step="0.1" />
-    <div>
+    <div class="colorOptions">
       <input type="color" id="colorChange" />
       <div
         class="colorOption"
@@ -73,11 +71,25 @@
         data-color="#e67e22"
       ></div>
     </div>
-    <button id="modeBtn">Fill</button>
-    <button id="resetBtn">Reset</button>
-    <button id="eraseBtn">Erase</button>
-    <input type="file" accept="image/*" id="file" />
-    <input type="text" placeholder="Write and then double click" id="text" />
+    <canvas></canvas>
+    <div class="btns">
+      <input
+        type="range"
+        id="lineWidth"
+        min="1"
+        max="10"
+        value="5"
+        step="0.1"
+      />
+      <button id="modeBtn">Fill</button>
+      <button id="resetBtn">Reset</button>
+      <button id="eraseBtn">Erase</button>
+      <label for="file">Add Photo</label>
+      <input type="file" accept="image/*" id="file" />
+      <button id="save">Save image</button>
+      <input type="text" placeholder="Add text here  :)" id="text" />
+    </div>
+
     <script src="./src/app.js"></script>
   </body>
 </html>

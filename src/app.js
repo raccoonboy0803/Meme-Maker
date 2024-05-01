@@ -7,10 +7,11 @@ const resetBtn = document.querySelector('#resetBtn');
 const eraseBtn = document.querySelector('#eraseBtn');
 const fileInput = document.querySelector('#file');
 const textInput = document.querySelector('#text');
+const saveBtn = document.querySelector('#save');
 
 const ctx = canvas.getContext('2d');
-const CANVAS_WIDTH = 800;
-const CANVAS_HEIGHT = 800;
+const CANVAS_WIDTH = 700;
+const CANVAS_HEIGHT = 700;
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 
@@ -76,7 +77,6 @@ function onEraseClick() {
   ctx.stroke();
 }
 function onFileChange(e) {
-  console.dir(e);
   const file = e.target.files[0];
   const url = URL.createObjectURL(file);
 
@@ -97,6 +97,13 @@ function onDoubleClick(e) {
     ctx.restore(); // 상태 저장값으로 복구
   }
 }
+function onSaveClick() {
+  const url = canvas.toDataURL();
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'myDrawing.png';
+  a.click();
+}
 
 canvas.addEventListener('mousemove', onMove);
 // === canvas.onmousemove = onMove;
@@ -116,3 +123,4 @@ modeBtn.addEventListener('click', onModeClick);
 resetBtn.addEventListener('click', onResetClick);
 eraseBtn.addEventListener('click', onEraseClick);
 fileInput.addEventListener('change', onFileChange);
+saveBtn.addEventListener('click', onSaveClick);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Player API Example</title>
+    <style>
+      #player {
+        width: 420px;
+        height: 240px;
+        margin: 0 auto;
+        display: block; /* 가운데 정렬 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="player"></div>
+
+    <script>
+      // YouTube iframe 재생기를 생성합니다.
+      let player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+          // videoId: '-zabRKMQ88c', // YouTube 동영상의 고유 ID
+          videoId: 'hU05_Rkm8qE', // YouTube 동영상의 고유 ID
+
+          playerVars: {
+            autoplay: 0, // 자동 재생
+            mute: 0, // 사운드 뮤트
+            controls: 0, // 컨트롤러 숨김
+          },
+          events: {
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange,
+          },
+        });
+      }
+
+      function onPlayerReady(event) {
+        // 재생이 준비되면 실행할 코드를 여기에 작성합니다.
+      }
+
+      function onPlayerStateChange(event) {
+        // 동영상 재생 상태 변경에 대한 코드를 여기에 작성합니다.
+      }
+    </script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
