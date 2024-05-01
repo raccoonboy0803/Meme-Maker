@@ -13,6 +13,8 @@ canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 ctx.lineWidth = lineWidth.value;
 ctx.lineWidth2 = lineWidth.value;
+ctx.lineWidth3 = lineWidth.value;
+ctx.lineWidth4 = lineWidth.value;
 
 let isPainting = false;
 let isFilling = false;
